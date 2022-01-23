@@ -1,0 +1,91 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>{% block title %}Music Manager{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- esse style.css vai pra pasta static/css -->
+    <link rel="stylesheet" href="{% static 'css/img.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <style type="text/css">
+        textarea {
+            width: 80%;
+            height: 90px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+        }
+
+        .asteriskField {
+            display: none;
+        }
+
+        form .alert ul li {
+            list-style: none;
+        }
+
+        form .alert ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        
+    </div>
+
+
+    <div class="container py-5">
+        {% block content %}
+            <div class="container-fluid px-3">
+                <div class="row min-vh-10">
+                    <div class="col-md-4 col-lg-6 col-xl-5 d-flex align-items-center">
+                        <div class="w-100 py-5 px-md-5 px-xl-6 position-relative">
+                            <p>Bem-vindos ao DjangoFileManager!</p>
+
+                            <h1>Sobre o projeto</h1>
+                            <p class="lead">Sistema para gerenciamento de arquivos (.pdf).</p>
+
+                            <p>Em breve mais detalhes.</p>
+                            <nav>
+                                <a href="{% url 'list-artist' %}"> Artistas </a>
+                                <a href="{% url 'list-music' %}"> Músicas </a>
+                            </nav>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-3 d-none d-md-block">
+                        <img src="https://www.iq.com.br/wp-content/uploads/2018/10/shutterstock_299222171-770x478.jpg">
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

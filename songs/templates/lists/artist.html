@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h3>Lista de Artistas</h3>
+    <a href="{% url 'add-artist' %}"> Adicionar Artista </a>
+    <div>
+        <table>
+        <tr>
+          <th>Nome</th>
+          <th>Opções</th>
+        </tr>
+        {% for artist in object_list %}
+        <tr>
+            <td>{{ artist.name }}</td>
+            <td>
+              <a href="{% url 'edit-artist' artist.pk %}"> Editar </a>
+              <a href="{% url 'delete-artist' artist.pk %}"> Excluir </a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td>Nenhum artista registrado</td>
+        </tr>
+
+        {% endfor %}
+      </table>
+    </div>
+    
+{% endblock %}

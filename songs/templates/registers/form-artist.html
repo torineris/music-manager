@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h3>Adicione um Artista</h3>
+    <p>Por favor, preencha todos os campos</p>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Adicionar">
+    </form>
+
+{% endblock %}
